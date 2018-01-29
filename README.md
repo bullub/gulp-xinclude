@@ -1,4 +1,7 @@
 # gulp-xinclude
+
+来使用[ATK](https://github.com/bullub/atk)吧，它完全支持gulp-xinclude的所有功能，并且具有更好的可扩展性和健壮性。
+
 gulp-xinclude指令解析工具库，基于gulp构建工具。
 该指令库支持在html中编写指令，然后使用该工具库进行处理后，得到对应的真实html，这样可以使源码编写过
 程中更加简洁，对静态html的服用及维护都很有好处。
@@ -11,6 +14,7 @@ gulp-xinclude指令解析工具库，基于gulp构建工具。
   7. 表达式中可以使用{expression}的方式指定路径中需要替换成对应变量的表达式，该表达式中替换的变量通过xinclude函数的参数传入。
   
 例如：
+```
 <!--xinclude file="path/to/file.ext;{somevarible}/path/to/file2.ext" -->
 
 <!--xinclude classes="path/to/file" -->
@@ -20,15 +24,16 @@ gulp-xinclude指令解析工具库，基于gulp构建工具。
 <!--xinclude rule="rule1;rule2" -->
 
 <!--xinclude template="path/to/file;path/to/file" -->
-
+```
 作为gulp插件，使用方式：
 
 npm命令安装：
 
-npm install gulp-xinclude
+`npm install gulp-xinclude`
 
 引用及使用
 
+```
 var xinclude = require("gulp-xinclude");
 
 var xincludeConf = {
@@ -48,7 +53,7 @@ gulp.task("resolve-xinclude", function(){
             .pipe(gulp.dest(somePath));
             
 });
-
+```
 执行gulp命令
 
 gulp resolve-xinclude
